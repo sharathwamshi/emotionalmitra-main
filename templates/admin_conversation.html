@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin — Conversation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="admin-shell">
+    <div class="admin-nav">
+      <div>
+        <a href="{{ url_for('admin_dashboard') }}">← Back to conversations</a>
+      </div>
+      <a class="logout" href="{{ url_for('admin_logout') }}">Logout</a>
+    </div>
+
+    <h2>Conversation {{ conv.session_id[:8] }}…</h2>
+    <p style="color:#6b7a7a;font-size:13px;">Started {{ conv.started_at }} · Last activity {{ conv.last_updated }}</p>
+
+    <div class="transcript">
+      {% for m in conv.messages %}
+      <div class="row {{ m.role }}">
+        <span class="role">{{ 'User' if m.role == 'user' else 'Bot' }}:</span>
+        <span>{{ m.text }}</span>
+        <div style="font-size:11px;color:#9aa;">{{ m.timestamp }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="login-shell">
+    <h2>Admin Login</h2>
+    {% if error %}<p class="error-msg">{{ error }}</p>{% endif %}
+    <form class="admin-form" method="POST">
+      <label>Username</label>
+      <input type="text" name="username" required autofocus />
+      <label>Password</label>
+      <input type="password" name="password" required />
+      <button class="btn-primary" type="submit">Log in</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "7ebef905-1878-438e-a4dd-00dcd69839c6": {
+    "session_id": "7ebef905-1878-438e-a4dd-00dcd69839c6",
+    "started_at": "2026-09-21T04:44:00.397384Z",
+    "messages": [
+      {
+        "role": "user",
+        "text": "im feeling guilty",
+        "timestamp": "2026-09-21T04:44:00.398875Z"
+      },
+      {
+        "role": "bot",
+        "text": "I hear you, and I want you to know that guilt is such a heavy feeling to carry around. It takes courage to even acknowledge it. Would you feel comfortable sharing a little about what's been weighing on you? I'm right here and I'm listening. 💛",
+        "timestamp": "2026-09-21T04:44:03.170651Z"
+      },
+      {
+        "role": "user",
+        "text": "still im feeling guilty",
+        "timestamp": "2026-09-21T04:44:36.197195Z"
+      },
+      {
+        "role": "bot",
+        "text": "That guilt sounds really heavy, and I'm glad you're sharing it with me. It's okay to still be feeling this way — healing and processing things takes time, and you don't have to rush yourself. Can you tell me a little more about what's been weighing on you most today? I'm here and I want to understand. 💙",
+        "timestamp": "2026-09-21T04:44:39.054957Z"
+      }
+    ],
+    "last_updated": "2026-09-21T04:44:39.054966Z"
+  }
+}

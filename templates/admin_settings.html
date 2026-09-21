@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin — Settings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="admin-shell">
+    <div class="admin-nav">
+      <div>
+        <a href="{{ url_for('admin_dashboard') }}">Conversations</a>
+        <a href="{{ url_for('admin_settings') }}">Settings</a>
+      </div>
+      <a class="logout" href="{{ url_for('admin_logout') }}">Logout</a>
+    </div>
+
+    <h2>Settings</h2>
+    {% if saved %}<p class="success-msg">Saved.</p>{% endif %}
+
+    <form class="admin-form" method="POST">
+      <label>Bot name</label>
+      <input type="text" name="bot_name" value="{{ settings.bot_name }}" />
+
+      <label>System prompt (how the bot behaves)</label>
+      <textarea name="system_prompt">{{ settings.system_prompt }}</textarea>
+
+      <label>Azure voice name</label>
+      <input type="text" name="voice_name" value="{{ settings.voice_name }}" />
+      <p style="font-size:12px;color:#6b7a7a;">
+        e.g. en-IN-NeerjaNeural, en-US-JennyNeural — see Azure's neural voice list.
+      </p>
+
+      <button class="btn-primary" type="submit">Save settings</button>
+    </form>
+  </div>
+</body>
+</html>

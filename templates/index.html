@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ bot_name }} — someone to talk to</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="app">
+    <div class="app-header">
+      <div class="dot"></div>
+      <div>
+        <h1>{{ bot_name }}</h1>
+        <p>Text or voice — I'm listening either way</p>
+      </div>
+    </div>
+
+    <div class="chat-window" id="chatWindow"></div>
+
+    <div class="input-bar">
+      <button class="icon-btn mic" id="micBtn" title="Talk">🎤</button>
+      <input type="text" id="textInput" placeholder="Type how you're feeling..." autocomplete="off" />
+      <button class="icon-btn" id="sendBtn" title="Send">➤</button>
+    </div>
+
+    <div class="disclaimer">
+      {{ bot_name }} is a supportive companion, not a licensed therapist. In a crisis, please contact a local emergency number or helpline.
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>

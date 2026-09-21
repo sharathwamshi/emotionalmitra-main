@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin — Conversations</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="admin-shell">
+    <div class="admin-nav">
+      <div>
+        <a href="{{ url_for('admin_dashboard') }}">Conversations</a>
+        <a href="{{ url_for('admin_settings') }}">Settings</a>
+      </div>
+      <a class="logout" href="{{ url_for('admin_logout') }}">Logout</a>
+    </div>
+
+    <h2>Conversations ({{ conversations|length }})</h2>
+
+    {% if conversations %}
+    <table class="conv-table">
+      <tr><th>Session</th><th>Started</th><th>Last activity</th><th>Messages</th><th></th></tr>
+      {% for c in conversations %}
+      <tr>
+        <td>{{ c.session_id[:8] }}…</td>
+        <td>{{ c.started_at }}</td>
+        <td>{{ c.last_updated }}</td>
+        <td>{{ c.messages|length }}</td>
+        <td><a href="{{ url_for('admin_conversation', session_id=c.session_id) }}">View</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No conversations yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
